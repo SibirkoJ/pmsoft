@@ -61,6 +61,12 @@ input[type=button] {
     float: right;
 }
 
+input[type=text], [type=password] {
+    background-color: aqua;
+    width: 235px;
+    
+}
+
 .topnav {
     overflow: hidden;
     background-color: #37536D;
@@ -178,3 +184,5 @@ td > div {
     }
 
 }
+
+
