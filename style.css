@@ -63,11 +63,17 @@ input[type=button] {
 
 input[type=text], [type=password] {
     width: 235px;
-    
+}
+
+#mainContent {
+    margin-top: 100px;
 }
 
 .topnav {
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: visible;
     background-color: #37536D;
 }
 
@@ -104,50 +110,120 @@ input[type=text], [type=password] {
   display: none;
 }
 
-table {
+
+/* index.html table of graphhics */
+
+tableGraph {
   border-spacing: 0;
 }
 
-td,
-th {
-  padding: 0.5em;
+.graph td,th {
+  padding-left: 2%;
 }
 
-th {
+.graph th {
   font-weight: bold;
   text-align: left;
 }
 
-thead th {
+.graph thead th {
   background-color: #999;
   color: white;
 }
 
-td > div {
+.graph td > div {
   float: right;
 }
 
-@media screen and (max-width: 1200px) { 
-  thead th:not(:first-child) {
-    display: none;
-  }
-  td, th {
-    display: block;
-    clear: both;
-  }
-  td[data-th]:before {
-    content: attr(data-th);
-    float: left;
-  }
+
+/* objects.html table of apartments */
+
+#page-wrap {
+    margin-top: 30px;
+}
+
+.objects { 
+    width: 95%; 
+    border-collapse: collapse; 
+}
+/* Zebra striping */
+
+.objects tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+.objects th { 
+    background: grey; 
+    color: white; 
+    font-weight: bold; 
+}
+.objects td, th { 
+    padding: 10px; 
+    padding-left: 10px;
+    padding-right: 30px;
+    text-align: center; 
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media screen and (max-width: 1320px), (min-width: 1250px) { 
+    .graph {
+        
+        
+    }   
+    
+}
+
+@media screen and (max-width: 980px) {
+
+    /* Force table to not be like tables anymore */
+    .objects table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .objects thead tr {
+        display: none;
+    }
+
+    .objects tr { 
+        border: 1px solid #ccc; 
+    }
+
+    .objects td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+
+    .objects td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        margin-top: 5px;
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+
+    /* Label the data */
+    td:nth-of-type(1):before { content: "№"; }
+    td:nth-of-type(2):before { content: "Сграда"; }
+    td:nth-of-type(3):before { content: "Вход"; }
+    td:nth-of-type(4):before { content: "Етаж"; }
+    td:nth-of-type(5):before { content: "Обект №"; }
+    td:nth-of-type(6):before { content: "Собственик"; }
+    td:nth-of-type(7):before { content: "Брой Живущи"; }
+    td:nth-of-type(8):before { content: "Баланс"; }
+    td:nth-of-type(9):before { content: ""; }
+    td:nth-of-type(10):before { content: ""; }
+    
 }
 
 
-@media screen and (max-width: 900px) {
-
-    
-    
-}
-
+/* Smartphones (portrait and landscape) ----------- */
 @media screen and (max-width: 670px) {
   .topnav a:not(:first-child) {
       display: none;
@@ -175,13 +251,31 @@ td > div {
     width: 50%;
   }
     
-.topnav.responsive a:hover {
+  .topnav.responsive a:hover {
     background: -webkit-linear-gradient(left, #37536D , #ddd); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right,#37536D , #ddd); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #37536D , #ddd); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #37536D , #ddd);  /*Standard syntax (must be last) */
-    }
+  }
 
 }
+
+@media screen and (max-width: 460px) { 
+    .empty {
+        visibility: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+	
+
+
 
 
