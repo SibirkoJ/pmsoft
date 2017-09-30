@@ -12,13 +12,15 @@
             <img src="Images/llv_logo_header.png"/>
             <h2>PMSOFT</h2>
             
+            &nbsp;<span id="ctl00_Header1_lblUser" style="font-weight:bold; color: white;">Потребител: Касиер 21</span>
             
-            
-            <a class="empty"></a>
-            <a href="login.html">Изход</a> <!-- logout.php-->   
-            <a href="objects.html">Обекти</a>
-            <a href="index.html">Начало</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <div id="navbarMenu">
+                <a class="empty"></a>
+                <a href="login.html">Изход</a> <!-- logout.php-->   
+                <a href="objects.html">Обекти</a>
+                <a href="index.html">Начало</a>
+                <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
+            </div>
         </div>
 
 
@@ -33,10 +35,38 @@
                 }
             </script>
 
-        <div id="mainContent">
+        <div id="mainContactContent">
             
-            <div id="">
+            <div id="contactForm" class="contactForm">
+                
+                <form action="/action_page.php">
+                    <label for="fname">Име</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Петърчо..">
+
+                    <label for="lname">Заглавие</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Услуги...">
+
+                    <label for="subject">Съобщение</label>
+                    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+
+                    <input type="submit" value="Изпрати">
+                </form>
+                
+            </div>    
             
+            
+            <div id="contactAdditionalInfo" align="center" style="width: 100%">
+            
+                <p>Повече информация относно предлаганите от нас услуги може да намерите на: <a href="https://www.greencleancity.com" target="_top">greencleancity.com</a> или да се свържете с нас: </p>
+
+                    <p>Green Clean Group</p>
+                    <p>Адрес: гр.София, кв. Витоша, бул. Симеоновско Шосе № 24, секция А, ет. 4 офис 20</p>
+                    <p> <a href="tel:+359 882 352 233">+359 882 352 233</a></p>
+                    <p> <a href="tel:+359 888 468 312">+359 888 468 312</a></p>
+                    <p> <a href="tel:+359 2 484 00 55">+359 2 484 00 55</a></p>
+                    <p>e-Mail:<a href="mailto:info@greencleancity.com" target="_top">info@greencleancity.com</a></p>
+                    <p> <a href="https://www.greencleancity.com" target="_top">www.greencleancity.com</a></p>
+                    <p> <a href="https://www.emag-greencleancity.com" target="_top">www.emag-greencleancity.com</a></p>
             
             </div>
             
