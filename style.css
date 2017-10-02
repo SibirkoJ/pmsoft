@@ -11,6 +11,15 @@ body {
     margin-bottom: 50px;
 }
 
+#mainContent {
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
 .block {
     height:100px;
     width:200px;
@@ -65,10 +74,6 @@ body {
 
 .logIn input[type=text], [type=password] {
     width: 235px;
-}
-
-#mainContent {
-    margin-top: ;
 }
 
 
@@ -199,7 +204,8 @@ tableGraph {
     width: 95%; 
     border-collapse: collapse; 
 }
-/* Zebra striping */
+
+/* table zebra striping */
 
 .objects tr:nth-of-type(odd) { 
     background: #eee; 
@@ -216,6 +222,44 @@ tableGraph {
     text-align: center; 
 }
 
+/* filer box in the objects.html */
+
+#objectsFilter {
+    background-color: #f2f2f2;
+    padding: 20px;
+    padding-top: 5px;
+    
+    margin: auto;
+    width: 500px;
+}
+
+#objectsFilter label {
+    margin-top: 0;
+}
+
+#objectsFilter select {
+    height: 30px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#objectsFilter input[type=text]{
+    width: 250px;
+    height: 25px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#mainContent input[type=button]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 
 /* iPads (portrait and landscape) ----------- */
@@ -286,6 +330,16 @@ tableGraph {
         margin: 10px;
         width: auto;
     }
+    
+   #objectsFilter {
+       margin: 20px;
+       width: auto;
+   }
+    
+  .openFilter {
+    margin-left: 20px;    
+  }
+
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -331,24 +385,27 @@ tableGraph {
     background: -o-linear-gradient(right,rgba(55, 83, 109, 0.5) , #ddd); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, rgba(55, 83, 109, 0.5), #ddd); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, rgba(55, 83, 109, 0.5) , #ddd);  /*Standard syntax (must be last) */
-  }
+  } 
 
 }
 
 @media screen and (max-width: 460px) { 
-
+    #objectsFilter {
+        height: 550px;
+    }
+    
+    #objectsFilter input[type=button]{
+        margin: 10px;
+    }
+    
+    .topnav .icon {
+        margin-right: 26px;
+        margin-top: 25px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    
+    
 }
-
-
-
-
-
-
-
-
-
-	
-
-
-
 
