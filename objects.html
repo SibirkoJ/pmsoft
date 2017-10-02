@@ -23,24 +23,44 @@
             </div>
         </div>
 
-
-            <script>
-                function myFunction() {
-                    var x = document.getElementById("myTopnav");
-                    if (x.className === "topnav") {
-                        x.className += " responsive";
-                    } else {
-                        x.className = "topnav";
-                    }
-                }
-            </script>
-
         <div id="mainContent">
             
-            <div id="objectsFilter">
+            <input type="button" id="btnOpenFilter" class="openFilter" value="Филтър на резултати по:" onclick="openFilter()"
+                   style="background-color: dodgerblue; margin-left: 3%; font-size: 15px;">
+            
+            <div id="objectsFilter" class="filter" style="display: none; ">
+            
+                    <!-- Филтриране на резултатите, които са показани на таблицата -->
+
+                        <p><label for="other">Сграда: </label></p>
+                            <select name="building" style="width: 250px;">
+                                    <option value="A">Българска Морава № 50</option>
+                                    <option value="B">Българска Морава № 51</option>
+                                    <option value="C">Българска Морава № 52</option>
+                                    <option value="D">Българска Морава № 53</option>
+                                </select><br><br>
+
+                        <p><label for="other">Вход: </label></p>
+                            <select name="entrance" style="width: 250px;">
+                                    <option value="">--Всички--</option>
+                                    <option value="A">A</option>
+                                    <option value="B">Б</option>
+                                    <option value="C">В</option>
+                                    <option value="D">Г</option>
+                                </select><br><br>
+
+                        <p><label for="other">Собственик: </label></p>
+                            <input type="text" name="" size="35" value=""><br><br>
+
+                        <p><label for="other">Обект №: </label></p>
+                            <input type="text" name="" size="35" value=""><br><br>
                 
+                        <p><label for="other">E-Pay №: </label></p>
+                            <input type="text" name="" size="35" value="">
                 
-                
+                        <input type="button" id="btnCloseFilter" value="Отказ" style="float: right;" onclick="closeFilter()">
+                        <input type="button" id="btnFilter" value="Филтър" style="float: right;">
+                        
             </div>
             
             <div id="objectsContents" align="center" style="width: 100%">
@@ -200,6 +220,41 @@
             </div>
             
         </div>
+        
+        <script type="text/javascript">
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            };
+            
+            function openFilter() {
+                var x = document.getElementById('objectsFilter');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+            
+            function closeFilter() {
+                var x = document.getElementById('objectsFilter');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+        </script>
 
     </body>
+    
+     <footer>
+        <img src="Images/llv_logo_small.png"/>
+        <p style="font-size: 70%;">Powered by LLV Technology Ltd. &copy; 2009 - 2017 All rights reserved.</p>
+    </footer>
+    
 </html>
