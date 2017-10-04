@@ -474,6 +474,10 @@ tableGraph {
     #objectsFilter {
         height: 450px;
     }
+    
+    .topnav span {
+        font-size: 90%;
+    }
 
 }
 
@@ -515,8 +519,8 @@ tableGraph {
         position:static;
         top: 0px;
         right: 0;
-        font-size: 90%;
-        margin-right: 100px;
+        font-size: 80%;
+        margin-right: 50px;
     }
     
     .topnav.responsive .icon {
@@ -556,3 +560,10 @@ tableGraph {
     
 }
 
+
+@media screen and (max-width: 400px) { 
+    .topnav span {
+        font-size: 80%;
+        margin-right: 0;
+    }
+}
