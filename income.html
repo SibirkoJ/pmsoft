@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <title>Приходи</title>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+
+        <div id="myTopnav" class="topnav" >
+
+            <img src="Images/llv_logo_header.png"/>
+            <h2>ProSOFT</h2>
+            
+            &nbsp;<span id="ctl00_Header1_lblUser" style="font-weight:bold; color: white;">Потребител: Касиер 510</span>
+        
+            <div>
+                <a class="empty"></a>
+                <a href="objects.html">Обекти</a>
+                <a href="">Дневен Отчет</a>
+                <a href="contact.html">Контакти</a>
+                <a href="login.html">Изход</a> <!-- logout.php--> 
+                <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
+            </div>
+        </div>
+
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+            </script>
+
+        <div id="mainContent">
+            
+            <div id="incomeWindow" >
+                
+                <div id="newIncomeTitle">Нов Приход</div>
+                
+                <div class="incomeForm">
+                
+                <p>Сграда: Българска Морава №54, Вход: 1, Обект №1... </p>  <!-- да бъде заменео с бек енд с ID за точната сграда -->    
+                    
+                <p><b>Неплатени Разходи</b></p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Разход</th>
+                            <th>Период</th>
+                            <th>Сума (лв)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Месечна такса</td>
+                            <td>01.10.2017 - 31.10.2017</td>
+                            <td>10.00</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                
+                <form action="/action_page.php">
+                    <label for="fname"><b>Общо:</b></label><br>
+                    <label for="fname">Плащане от:</label>
+                    <input type="text" id="">
+
+                    <label for="lname">Заглавие</label>
+                    <input type="text" id="" placeholder="Услуги...">
+
+                    <label for="subject">Съобщение</label>
+                    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+
+                    <input type="submit" value="Изпрати">
+                </form>
+                
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </body>
+    
+     <footer>
+        <img src="Images/llv_logo_small.png"/>
+        <p style="font-size: 70%;">Powered by LLV Technology Ltd. &copy; 2009 - 2017 All rights reserved.</p>
+    </footer>
+    
+</html>
