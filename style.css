@@ -97,7 +97,7 @@ footer {
 }
 
 .topnav a {
-    float: right;
+    float: left;
     display: block;
     color: #f2f2f2;
     margin-top: 5px;
@@ -120,11 +120,22 @@ footer {
 
 .topnav span {
     float: right;
+    position: absolute;
+    top: 0px;
+    right: 0;
     margin-right: 45px;
 } 
 
 .empty {
+    display: none;
     visibility: hidden;
+}
+.topnav div {
+    width: 450px;
+    float: right;
+    margin-top: 19px;
+    margin-right: 0;
+    
 }
 
 /* contact.html form and general edit */
@@ -167,7 +178,9 @@ footer {
     margin-top: 20px;
 }
 
-
+#objectsFilter input[type=button]:hover {
+    background-color: #45a049;
+}
 
 /* index.html table of graphhics */
 
@@ -263,6 +276,64 @@ tableGraph {
     cursor: pointer;
 }
 
+/* income.html main style */
+
+.incomeForm input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.incomeForm input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#incomeWindow {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 700px;
+}
+
+.incomeForm {
+    padding: 20px;
+}
+
+.incomeForm table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.incomeForm td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#newIncomeTitle {
+    background-color: #37536D;
+    color: white;
+    width: 660px;
+    margin-top: 0;
+    margin-left: 0;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+}
+
 
 /* iPads (portrait and landscape) ----------- */
 @media screen and (max-width: 1320px), (min-width: 1250px) { 
@@ -273,10 +344,15 @@ tableGraph {
     
 }
 
-@media screen and (max-width: 980px) {
 
+@media screen and (max-width: 980px) {
+    .graph table, .graph thead, .graph tbody, .graph th, .graph td, .graph tr { 
+        display: block; 
+    }
+    
+    
     /* Force table to not be like tables anymore */
-    .objects table, thead, tbody, th, td, tr { 
+    .objects table, .objects thead, .objects tbody, .objects th, .objects td, .objects tr { 
         display: block; 
     }
 
@@ -310,16 +386,16 @@ tableGraph {
     }
 
     /* Label the data */
-    td:nth-of-type(1):before { content: "№"; }
-    td:nth-of-type(2):before { content: "Сграда"; }
-    td:nth-of-type(3):before { content: "Вход"; }
-    td:nth-of-type(4):before { content: "Етаж"; }
-    td:nth-of-type(5):before { content: "Обект №"; }
-    td:nth-of-type(6):before { content: "Собственик"; }
-    td:nth-of-type(7):before { content: "Брой Живущи"; }
-    td:nth-of-type(8):before { content: "Баланс"; }
-    td:nth-of-type(9):before { content: ""; }
-    td:nth-of-type(10):before { content: ""; }
+    .objects td:nth-of-type(1):before { content: "№"; }
+    .objects td:nth-of-type(2):before { content: "Сграда"; }
+    .objects td:nth-of-type(3):before { content: "Вход"; }
+    .objects td:nth-of-type(4):before { content: "Етаж"; }
+    .objects td:nth-of-type(5):before { content: "Обект №"; }
+    .objects td:nth-of-type(6):before { content: "Собственик"; }
+    .objects td:nth-of-type(7):before { content: "Брой Живущи"; }
+    .objects td:nth-of-type(8):before { content: "Баланс"; }
+    .objects td:nth-of-type(9):before { content: ""; }
+    .objects td:nth-of-type(10):before { content: ""; }
     
 }
 
@@ -356,6 +432,7 @@ tableGraph {
   }
     
   .topnav a.icon {
+    margin-right: 10px;
     padding: 7px 17px 7px 17px;
     float: right;
     display: block;
@@ -373,7 +450,8 @@ tableGraph {
   }
     
   .topnav.responsive a {
-    margin-right: 30px;
+      margin-top: 10px;
+    margin-right: 10px;
     margin-bottom: 5px;
     float: right;
       
@@ -389,15 +467,20 @@ tableGraph {
     background: linear-gradient(to right, rgba(55, 83, 109, 0.5) , #ddd);  /*Standard syntax (must be last) */
   } 
     
+    .topnav div {
+        width: 250px;
+    }
+    
     #objectsFilter {
-        height: 525px;
+        height: 450px;
     }
 
 }
 
+
 @media screen and (max-width: 460px) { 
     #objectsFilter {
-        height: 550px;
+        height: 500px;
     }
     
     #objectsFilter input[type=button]{
@@ -409,14 +492,67 @@ tableGraph {
         width: 100%;
     }
     
+    /* navigation bar responsiveness */
+    
+    .topnav {
+        height: 100px;
+    }
+    
+    .topnav.responsive {
+        height: auto;
+    }
+    
     .topnav .icon {
-        margin-right: 26px;
-        margin-top: 25px;
+        margin-right: 10px;
+        margin-top: 10px;
         position: absolute;
         right: 0;
         top: 0;
       }
     
+    .topnav span {
+        float: left;  
+        position:static;
+        top: 0px;
+        right: 0;
+        font-size: 90%;
+        margin-right: 100px;
+    }
+    
+    .topnav.responsive .icon {
+        margin-top: 10px;
+    }
+    
+    .topnav.responsive .icon:hover {
+        background-color: white;
+        width: 20px;
+    }
+    
+    .topnav.responsive a {
+        margin-right: 10px;
+    }
+    
+    .topnav div {
+        width: 200px;
+    }
+    
+    .topnav.responsive div {
+        width: 300px;
+        margin-top: -40px
+    }
+    
+    .topnav h2 {
+        color: white;
+        width: 120px;
+        float: left;
+        font-size: 120%
+    }
+
+    .topnav img {
+        margin: 5px;
+        width: 45px;
+        float: left;
+    }
     
 }
 
