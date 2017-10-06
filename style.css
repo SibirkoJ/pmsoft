@@ -243,27 +243,33 @@ tableGraph {
     display: none;
     padding: 20px;
     padding-top: 5px;
-    
+    border-radius: 4px;
     margin: auto;
-    width: 500px;
+    margin-top: 5px;
+    width: 92%;
 }
 
 #objectsFilter label {
-    margin-top: 0;
+    margin-right: 0;
 }
 
 #objectsFilter select {
     width: 250px;
     height: 30px;
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 30px;
     padding: 0;
 }
 
 #objectsFilter input[type=text]{
-    width: 250px;
+    width: 150px;
     height: 25px;
     border-radius: 4px;
     text-decoration: none;
+    
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: 30px;
 }
 
 #mainContent input[type=button]{
@@ -336,12 +342,27 @@ tableGraph {
 }
 
 
-/* iPads (portrait and landscape) ----------- */
+/* mini laptops and ipad landscape */
 @media screen and (max-width: 1320px), (min-width: 1250px) { 
     .graph {
         
         
-    }   
+    } 
+    
+    #objectsFilter {
+    height: 80px;
+       padding-right: 0;
+       padding-top: 20px;
+       padding-right: 10px;
+   }
+    
+    #objectsFilter select {
+        width: 200px;
+    }
+
+    #objectsFilter input[type=text]{
+        width: 130px;
+    }
     
 }
 
@@ -397,11 +418,11 @@ tableGraph {
     .objects td:nth-of-type(8):before { content: "Баланс"; }
     .objects td:nth-of-type(9):before { content: ""; }
     .objects td:nth-of-type(10):before { content: ""; }
-    
+
 }
 
-
-@media screen and (max-width: 750px) {
+/* ipad and ipad pro resolution */
+@media screen and (max-width: 768px) {
     #contactForm {
         border-radius: 5px;
         background-color: #f2f2f2;
@@ -411,17 +432,27 @@ tableGraph {
     }
     
    #objectsFilter {
+       padding-top: 20px;
        margin: 20px;
        width: auto;
+       height: 120px;
    }
     
   .openFilter {
-    margin-left: 20px;    
+        margin-left: 20px;    
   }
+
+    #objectsFilter select {
+        width: 200px;
+    }
+
+    #objectsFilter input[type=text]{
+        width: 100px;
+    }
 
 }
 
-/* Smartphones (portrait and landscape) ----------- */
+/* Smartphones (portrait and landscape) */
 @media screen and (max-width: 670px) {
   .topnav {
     overflow: hidden;
@@ -498,10 +529,10 @@ tableGraph {
 
 }
 
-
-@media screen and (max-width: 460px) { 
+/* iphone Plus screen stand up*/
+@media screen and (max-width: 414px) { 
     #objectsFilter {
-        height: 500px;
+        height: 370px;
     }
     
     #objectsFilter input[type=button]{
@@ -574,7 +605,7 @@ tableGraph {
     
 }
 
-
+/* iphone normal screen stand up*/
 @media screen and (max-width: 375px) { 
     .topnav {
         height: 55px;
