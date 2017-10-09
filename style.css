@@ -80,6 +80,7 @@ footer {
 /* navigation bar from all pages */
 
 .topnav {
+    height: 60px;
     overflow: hidden;
     background-color: #37536D;
 }
@@ -87,12 +88,13 @@ footer {
 .topnav h2 {
     color: white;
     width: 120px;
+    font-size: 125%;
     float: left;
 }
 
 .topnav img {
     margin: 5px;
-    width: 60px;
+    width: 50px;
     float: left;
 }
 
@@ -134,7 +136,7 @@ footer {
 .topnav div {
     width: 350px;
     float: right;
-    margin-top: 19px;
+    margin-top: 10px;
     margin-right: 0;
     
 }
@@ -422,7 +424,7 @@ tableGraph {
 }
 
 /* ipad and ipad pro resolution */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
     #contactForm {
         border-radius: 5px;
         background-color: #f2f2f2;
@@ -449,6 +451,39 @@ tableGraph {
     #objectsFilter input[type=text]{
         width: 100px;
     }
+
+}
+
+
+@media screen and (max-width: 730px), (max-height: 420px){
+    
+    #objectsFilter {
+        height: 70px;
+    }
+    
+    .topnav {
+        overflow: hidden;
+        background-color: #37536D;
+        height: 60px;
+    }
+    
+    .topnav h2 {
+        font-size: 120%;
+    }
+    
+    .topnav img {
+        width: 50px;
+    }
+    
+    .topnav div {
+        margin-top: 10px;
+    }
+
+    #objectsFilter input[type=text] {
+        width: 50px;
+        margin-right: 5px;
+    }
+
 
 }
 
@@ -529,8 +564,23 @@ tableGraph {
 
 }
 
+
+@media screen and (max-width: 670px), (max-height: 380px){
+    
+    #objectsFilter {
+        height: 70px;
+    }
+
+    #objectsFilter input[type=text] {
+        width: 50px;
+        margin-right: 5px;
+    }
+
+
+}
+
 /* iphone Plus screen stand up*/
-@media screen and (max-width: 414px) { 
+@media screen and (max-width: 420px) { 
     #objectsFilter {
         height: 370px;
     }
@@ -547,7 +597,7 @@ tableGraph {
     /* navigation bar responsiveness */
     
     .topnav {
-        height: 55px;
+        height: 70px;
     }
     
     .topnav.responsive {
@@ -561,11 +611,9 @@ tableGraph {
       }
     
     .topnav span {
-        float: left;  
-        position:static;
-        top: 0px;
-        right: 0;
-        font-size: 80%;
+        font-size: 75%;
+        margin-right: 195px;
+        margin-top: 50px;
     }
     
     .topnav.responsive .icon {
@@ -606,9 +654,9 @@ tableGraph {
 }
 
 /* iphone normal screen stand up*/
-@media screen and (max-width: 375px) { 
+@media screen and (max-width: 380px) { 
     .topnav {
-        height: 55px;
+        height: 75px;
     }
     .topnav.responsive a {
         margin-top: 12px;
@@ -622,7 +670,7 @@ tableGraph {
         padding: 0px 5px 0px 5px;
     }
     .topnav span {
-        font-size: 80%;
-        margin-right: 25px;
+        font-size: 75%;
+        float: left;
     }
 }
