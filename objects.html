@@ -9,14 +9,14 @@
 
         <div id="myTopnav" class="topnav" >
 
-            <img src="Images/llv_logo_header.png"/>
+            <img src="Images/llv_logo_header.png" href="home.html"/>
             <h2>ProPMS</h2>
             
             &nbsp;<span id="ctl00_Header1_lblUser" style="font-weight:bold; color: white;">Потребител: Касиер 510</span>
         
             <div>
                 <a class="empty"></a>
-                <a href="">Delete</a>
+                <a href="objects.html">Обекти</a>
                 <a href="">Дневен Отчет</a>
                 <a href="login.html">Изход</a> <!-- logout.php--> 
                 <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
@@ -32,15 +32,15 @@
             
                     <!-- Филтриране на резултатите, които са показани на таблицата -->
 
-                        <p><label for="other">Сграда: </label></p>
+                        <label for="other">Сграда: </label>
                             <select name="building" >
                                     <option value="A">Българска Морава № 50</option>
                                     <option value="B">Българска Морава № 51</option>
                                     <option value="C">Българска Морава № 52</option>
                                     <option value="D">Българска Морава № 53</option>
-                                </select><br>
+                                </select>
 
-                        <p><label for="other">Вход: </label></p>
+                        <label for="other">Вход: </label>
                             <select name="entrance">
                                     <option value="">--Всички--</option>
                                     <option value="A">A</option>
@@ -49,13 +49,13 @@
                                     <option value="D">Г</option>
                                 </select><br>
 
-                        <p><label for="other">Собственик: </label></p>
-                            <input type="text" name="" value=""><br>
+                        <label for="other">Собственик: </label>
+                            <input type="text" name="" value="">
 
-                        <p><label for="other">Обект №: </label></p>
-                            <input type="text" name="" value=""><br>
+                        <label for="other">Обект №: </label>
+                            <input type="text" name="" value="">
                 
-                        <p><label for="other">E-Pay №: </label></p>
+                        <label for="other">E-Pay №: </label>
                             <input type="text" name="" value="">
                 
                         <input type="button" id="btnCloseFilter" value="Отказ" style="float: right;" onclick="closeFilter()">
