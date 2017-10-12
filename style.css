@@ -288,18 +288,18 @@ tableGraph {
 /* income.html main style */
 
 .incomeForm input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
+    padding: 4px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    
+    text-align: right;
     box-sizing: border-box;
+    
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     resize: vertical;
 }
 
-.incomeForm input[type=submit] {
+.incomeForm input[type=button] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -307,48 +307,125 @@ tableGraph {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    float: right;
 }
 
 #incomeWindow {
     border-radius: 5px;
     background-color: #f2f2f2;
     margin: auto;
-    width: 700px;
+    width: 83%;
 }
 
 .incomeForm {
     padding: 20px;
+    height: 650px;
+}
+
+.incomeForm p {
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 .incomeForm table {
+    background-color: #f2f2f2;
     font-family: arial, sans-serif;
     border-collapse: collapse;
+
+    border-radius: 4px;
+    overflow: auto;   
     width: 100%;
+}
+
+.incomeForm thead {
+    background-color: #e3e2e1;
 }
 
 .incomeForm td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 
 #newIncomeTitle {
     background-color: #37536D;
     color: white;
-    width: 660px;
     margin-top: 0;
     margin-left: 0;
     margin: auto;
-    padding: 20px;
+    padding:10px;
     border-radius: 4px;
+}
+
+#unpaid {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#unpaid p {
+    margin-top: 2px;
+}
+
+#unpaid label {
+    margin-top: 2px;
+}
+
+#incomeContentPaymentInTotal {
+    width: 160px; 
+    float: right; 
+    margin-right: 8%;
+}
+
+.formDivs {
+    float: left; 
+    width: 33%; 
+    height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.formDiv {
+    width: 250px; 
+    text-align: center;
+    float: left;
+    margin:auto;
+    margin-left: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
 }
 
 
 /* mini laptops and ipad landscape */
-@media screen and (max-width: 1320px), (min-width: 1250px) { 
-    .graph {
-        
-        
+@media screen and (max-width: 1370px), (min-width: 1250px) { 
+    .graph { 
     } 
     
     #objectsFilter {
@@ -364,6 +441,11 @@ tableGraph {
 
     #objectsFilter input[type=text]{
         width: 130px;
+    }
+    
+    /* income.html*/
+    .incomeForm {
+        height: 590px;
     }
     
 }
@@ -452,6 +534,17 @@ tableGraph {
         width: 100px;
     }
 
+    .formDiv { 
+        width: 45%; 
+    }
+    
+    .modal-content {
+        width: 70%;
+    }
+    
+    .incomeForm {
+        height: 630px;
+    }
 }
 
 
@@ -561,6 +654,10 @@ tableGraph {
     .topnav span {
         font-size: 85%;
     }
+    
+    .formDiv { 
+        width: 40%; 
+    }
 
 }
 
@@ -575,12 +672,55 @@ tableGraph {
         width: 50px;
         margin-right: 5px;
     }
-
+    
+    .formDiv { 
+        width: 40%; 
+    }
+    
+    .incomeForm input[type=button] {
+        margin-top: 250px;
+    }
 
 }
 
-/* iphone Plus screen stand up*/
-@media screen and (max-width: 420px) { 
+
+@media screen and (max-width: 665px) {
+    /* income.html*/
+    .incomeForm {
+        height: 1000px;
+    }
+    
+    #unpaid {
+        overflow: auto;
+    }
+    
+    #unpaid input[type=button]{
+        margin: 10px;
+        margin-top: 20px;
+    }
+    
+    #unpaid input[type=text]{
+        width: 40%;
+    }
+    
+    #incomeContentPaymentInTotal {
+        float: left;
+        width: auto;
+    }
+    
+    #incomeContentPaymentInTotal label{
+        margin-right: 20px;
+    }
+    
+    .formDivs {
+        width: 100%;
+    }
+
+    .formDiv {
+        margin: 0;
+        width: 100%;
+    }
+    /* objetcs.html*/
     #objectsFilter {
         height: 370px;
     }
@@ -593,9 +733,20 @@ tableGraph {
     #objectsFilter input[type=text], #objectsFilter select{
         width: 100%;
     }
-    
+
+}
+
+
+@media screen and (max-width: 500px) {
+    /* income.html*/
+    .incomeForm {
+        height: 1150px;
+    }
+}
+
+/* iphone Plus screen stand up*/
+@media screen and (max-width: 420px) { 
     /* navigation bar responsiveness */
-    
     .topnav {
         height: 70px;
     }
@@ -650,6 +801,10 @@ tableGraph {
         width: 45px;
         float: left;
     }
+    /* income.html */
+    .incomeForm {
+        height: 1150px;
+    }
     
 }
 
@@ -673,4 +828,15 @@ tableGraph {
         font-size: 75%;
         float: left;
     }
+    
+    #objectsFilter {
+       height: 350px;
+   }
+    
+        /* income.html*/
+    .incomeForm {
+        height: 1150px;
+    }
+}
+    
 }
