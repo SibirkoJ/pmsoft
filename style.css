@@ -740,6 +740,13 @@ tableGraph {
 @media screen and (max-width: 500px) {
     /* income.html*/
     .incomeForm {
+        height: 1020px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    /* income.html*/
+    .incomeForm {
         height: 1150px;
     }
 }
