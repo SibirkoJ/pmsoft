@@ -16,7 +16,7 @@
         
             <div>
                 <a class="empty"></a>
-                <a href="">Delete</a>
+                <a href="objects.html">Обекти</a>
                 <a href="">Дневен Отчет</a>
                 <a href="login.html">Изход</a> <!-- logout.php--> 
                 <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
@@ -45,47 +45,167 @@
                 
                 <p>Сграда: Българска Морава №54, Вход: 1, Обект №1... </p>  <!-- да бъде заменео с бек енд с ID за точната сграда -->    
                     
-                <p><b>Неплатени Разходи</b></p>
                 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>Разход</th>
-                            <th>Период</th>
-                            <th>Сума (лв)</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                <div id="unpaid">     
+                
+                    <p><b>Неплатени Разходи</b></p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Разход</th>
+                                    <th>Период</th>
+                                    <th>Сума (лв)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Месечна такса</td>
+                                    <td>01.10.2017 - 31.10.2017</td>
+                                    <td>10.00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                            </tbody>
+                        </table><br>
+
+                        <label for="all"><b>Общо:</b></label><br>
+
+                        <label for="paymentFrom">Плащане от:</label>
+                        <input type="text" id="">
+                        
+                        <div id="incomeContentPaymentInTotal">
+                            <label for="name">Плащане:</label>
+                            <input type="text" id="" placeholder="10.00" style="width: 80px;">
+                        </div>    
                     
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Месечна такса</td>
-                            <td>01.10.2017 - 31.10.2017</td>
-                            <td>10.00</td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                    </tbody>
-                </table><br>
-                
-                <form action="/action_page.php">
-                    <label for="fname"><b>Общо:</b></label><br>
-                    <label for="fname">Плащане от:</label>
-                    <input type="text" id="">
-
-                    <label for="lname">Заглавие</label>
-                    <input type="text" id="" placeholder="Услуги...">
-
-                    <label for="subject">Съобщение</label>
-                    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
-
-                    <input type="submit" value="Изпрати">
+                </div>    
+                    
+                <form action="/action_page.php">    
+                    <div class="formDivs">
+                        <label for="method">Начин за плащане</label><br>
+                        <select name="paymentMethod" style="width: 150px;">
+                                <option value="cash">В брой</option>
+                                <option value="bank">Банков пъв</option>
+                                <option value="card">Карта</option>
+                                <option value="E-Pay">E-Pay</option>
+                        </select>
+                    </div>
+                    
+                    <div class="formDivs">
+                        <label for="date">Дата за плащане</label><br>
+                        <input type="date" id="date" style="width: 130px;">
+                    </div>
+                    
+                    <div class="formDivs">
+                        <label for="avans">Аванс (разполагаем)</label><br>
+                        <label for="avans">0.00лв</label>
+                    </div>
+                        
+                    <div class="formDiv">
+                        <label for="details">Детайли зa плащане</label>
+                        <textarea id="subject" name="subject" placeholder=""></textarea>
+                    </div>
+                    
+                    
+                    <div class="formDiv">
+                        <label for="doc">Документ</label>
+                        <textarea></textarea>
+                        <!-- add the php scrip for uploading a file in here example: https://www.w3schools.com/php/php_file_upload.asp --> 
+                    </div>
+                    
+                    <input type="button" id="" value="Отказ">
+                    <input type="button" id="btnSubmitIncome" value="Запази">
+                    
                 </form>
                 
                 </div>
                 
             </div>
+
+            <div id="myModal" class="modal">
+
+              <div class="modal-content">
+                <p>Искате ли да разпечатате ПКО?</p>
+                <input type="button" class="confirmIncome" value="Да-Мобилен принт"><br>
+                <input type="button" class="closeIncome" onclick="closeIncomeModal()" value="Отказ">
+              </div>
+
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("btnSubmitIncome");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                function closeIncomeModal() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
             
         </div>
         
