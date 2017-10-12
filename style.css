@@ -737,17 +737,32 @@ tableGraph {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     /* income.html*/
     .incomeForm {
         height: 1020px;
     }
 }
 
+
 @media screen and (max-width: 465px) {
     /* income.html*/
     .incomeForm {
-        height: 1200px;
+        height: 1050px;
+    }
+    
+    #incomeWindow {
+        margin-top: 0px;
+        margin: auto;
+        width: 100%;
+    }
+
+    #mainContent.incomePageMainContent{
+        margin-top: 0px;
+    }
+    
+    #newIncomeTitle {
+    border-radius: 0px;
     }
 }
 
@@ -808,10 +823,6 @@ tableGraph {
         width: 45px;
         float: left;
     }
-    /* income.html */
-    .incomeForm {
-        height: 1200px;
-    }
     
 }
 
@@ -839,11 +850,5 @@ tableGraph {
     #objectsFilter {
        height: 350px;
    }
-    
-        /* income.html*/
-    .incomeForm {
-        height: 1200px;
-    }
-}
     
 }
