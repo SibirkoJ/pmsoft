@@ -17,7 +17,7 @@
             <div>
                 <a class="empty"></a>
                 <a href="objects.html">Обекти</a>
-                <a href="">Дневен Отчет</a>
+                <a href="daily.html">Дневен Отчет</a>
                 <a href="login.html">Изход</a> <!-- logout.php--> 
                 <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
             </div>
@@ -35,7 +35,7 @@
                 }
             </script>
 
-        <div id="mainContent">
+        <div id="mainContent" class="incomePageMainContent">
             
             <div id="incomeWindow" >
                 
@@ -50,6 +50,12 @@
                 
                     <p><b>Неплатени Разходи</b></p>
 
+                    <div id="avans">
+                    
+                        Аванс <input type="checkbox">
+                    
+                    </div>
+                    
                         <table>
                             <thead>
                                 <tr>
@@ -57,7 +63,7 @@
                                     <th>Разход</th>
                                     <th>Период</th>
                                     <th>Сума (лв)</th>
-                                    <th></th>
+                                    <th><input type="checkbox" onclick="toggle(this);"></th>
                                 </tr>
                             </thead>
 
@@ -66,63 +72,96 @@
                                     <td>1</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="25.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="210.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="81.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="34.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="25.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="50.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
                                     <td>Месечна такса</td>
                                     <td>01.10.2017 - 31.10.2017</td>
-                                    <td>10.00</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="text" value="40.00" class="amount"></td>
+                                    <td><input type="checkbox" class="amountCheck"></td>
                                 </tr>
                             </tbody>
-                        </table><br>
+                        </table><br>                    
 
-                        <label for="all"><b>Общо:</b></label><br>
-
-                        <label for="paymentFrom">Плащане от:</label>
-                        <input type="text" id="">
+                        <label for="all"><b>Общо:</b></label>
+                        <input type="text" id="total"
+                       style="background-color: transparent; margin: 0; text-align: right; width: 70px; border: 0; margin-left: 110px;"><br>
+                    
+                        <label for="name">Плащане:</label>
+                        <input type="text" id="total1" readonly style="width: 160px;">
                         
                         <div id="incomeContentPaymentInTotal">
-                            <label for="name">Плащане:</label>
-                            <input type="text" id="" placeholder="10.00" style="width: 80px;">
+                            <label for="paymentFrom">Плащане от:</label>
+                            <input type="text" id="" style="width: 120px;">
                         </div>    
+                    
+                    <!-- script for the sum of values in the table-->
+                    
+                    <script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.min.js">
+                        $(function() {
+
+                          function getTotal(isInit) {
+
+                            var total = 0;
+                            var selector = isInit ? ".amount" : ".amountCheck:checked";
+                            $(selector).each(function() {
+                              total += parseInt($(this).val());
+                            });
+                            //$("#tot_amount").val(sum.toFixed(3));
+
+                            if (total == 0) {
+                              $('#total1').val('');
+                            } else {
+                              $('#total1').val(total);
+                            }
+
+                          }
+
+                           $(".amount").click(function(event) {
+                             getTotal();
+                          });
+                          getTotal(true);
+
+                        });
+                    </script>
+                    
                     
                 </div>    
                     
@@ -131,7 +170,7 @@
                         <label for="method">Начин за плащане</label><br>
                         <select name="paymentMethod" style="width: 150px;">
                                 <option value="cash">В брой</option>
-                                <option value="bank">Банков пъв</option>
+                                <option value="bank">Банков път</option>
                                 <option value="card">Карта</option>
                                 <option value="E-Pay">E-Pay</option>
                         </select>
@@ -139,7 +178,24 @@
                     
                     <div class="formDivs">
                         <label for="date">Дата за плащане</label><br>
-                        <input type="date" id="date" style="width: 130px;">
+                        <input type="date" id="theDate" style="width: 130px;">
+                        
+                        <script>
+                        
+                            var date = new Date();
+
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1;
+                            var year = date.getFullYear();
+
+                            if (month < 10) month = "0" + month;
+                            if (day < 10) day = "0" + day;
+
+                            var today = year + "-" + month + "-" + day;       
+                            document.getElementById("theDate").value = today;
+
+                        </script>
+                        
                     </div>
                     
                     <div class="formDivs">
@@ -178,7 +234,7 @@
 
             </div>
 
-            <script>
+            <script language="JavaScript" type="text/javascript">
                 // Get the modal
                 var modal = document.getElementById('myModal');
 
@@ -202,6 +258,14 @@
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
+                    }
+                }
+                
+                function toggle(source) {
+                    var checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+                    for (var i = 0; i < checkboxes.length; i++) {
+                        if (checkboxes[i] != source)
+                            checkboxes[i].checked = source.checked;
                     }
                 }
             </script>
