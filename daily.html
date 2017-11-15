@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <title>Дневен Отчет</title>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+
+        <div id="myTopnav" class="topnav" >
+
+            <img src="Images/llv_logo_header.png"/>
+            <h2>ProPMS</h2>
+            
+            &nbsp;<span id="ctl00_Header1_lblUser" style="font-weight:bold; color: white;">Потребител: Касиер 510</span>
+        
+            <div>
+                <a class="empty"></a>
+                <a href="objects.html">Обекти</a>
+                <a href="">Дневен Отчет</a>
+                <a href="login.html">Изход</a> <!-- logout.php--> 
+                <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#x2631;</a>
+            </div>
+        </div>
+
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+            </script>
+
+        <div id="mainContent">
+            
+            <input type="button" id="btnOpenDailyFilter" class="openDailyFilter" value="Филтър на резултати по:" onclick="openDailyFilter()"
+                   style="background-color: dodgerblue; margin-left: 3%; font-size: 15px;">
+            
+            <div id="dailyFilter" class="filter" style="display: none; ">
+            
+                    <!-- Филтриране на резултатите, които са показани на таблицата -->
+
+                <label for="other">Сграда: </label>
+                        <select name="building" >
+                                <option value="All">Всички</option>
+                                <option value="A">Българска Морава № 50</option>
+                                <option value="B">Българска Морава № 51</option>
+                                <option value="C">Българска Морава № 52</option>
+                                <option value="D">Българска Морава № 53</option>
+                            </select>
+                
+                <label for="other">Група: </label>
+                            <select name="building" >
+                                <option value="All">Всички</option>
+                                <option value="A">Българска Морава № 50</option>
+                                <option value="B">Българска Морава № 51</option>
+                                <option value="C">Българска Морава № 52</option>
+                                <option value="D">Българска Морава № 53</option>
+                            </select>
+                
+                <label for="other">Потребител: </label>
+                            <select name="building" >
+                                <option value="All">Всички</option>
+                                <option value="A">Българска Морава № 50</option>
+                                <option value="B">Българска Морава № 51</option>
+                                <option value="C">Българска Морава № 52</option>
+                                <option value="D">Българска Морава № 53</option>
+                            </select>
+                
+                
+                
+                <label for="other">Вход: </label>
+                            <select name="entrance">
+                                <option value="">Всички</option>
+                                <option value="A">A</option>
+                                <option value="B">Б</option>
+                                <option value="C">В</option>
+                                <option value="D">Г</option>
+                            </select>
+                
+                <label for="other">Вид: </label>
+                            <select name="building" >
+                                <option value="All">Всички</option>
+                                <option value="A">Българска Морава № 50</option>
+                                <option value="B">Българска Морава № 51</option>
+                                <option value="C">Българска Морава № 52</option>
+                                <option value="D">Българска Морава № 53</option>
+                            </select>
+                
+                <label for="other">Вид Запис: </label>
+                            <select name="building" >
+                                <option value="All">Всички</option>
+                                <option value="A">Българска Морава № 50</option>
+                                <option value="B">Българска Морава № 51</option>
+                                <option value="C">Българска Морава № 52</option>
+                                <option value="D">Българска Морава № 53</option>
+                            </select>
+                
+
+                        
+
+                        <label for="other">Собственик: </label>
+                            <input type="text" name="" value="">
+
+                        <label for="other">Обект №: </label>
+                            <input type="text" name="" value="">
+                
+                        <label for="other">E-Pay №: </label>
+                            <input type="text" name="" value="">
+                
+                        <input type="button" id="btnCloseDailyFilter" value="Отказ" style="float: right;" onclick="closeDailyFilter()">
+                        <input type="button" id="btnDailyFilter" value="Филтър" style="float: right;">
+                        
+            </div>
+            
+            <div id="dailyContents" align="center" style="width: 100%">
+
+                <table class="daily">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Сграда</th>
+                            <th>Вход</th>
+                            <th>Дата</th>
+                            <th>Сума</th>
+                            <th>Вид Запис</th>
+                            <th>Плащане</th>
+                            <th>Група</th>
+                            <th>Вид</th>
+                            <th>Бележки</th>
+                            <th>Въведен от</th>
+                            <th>Дата на въвеждане</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Българска Морава №54</td>
+                            <td>1</td>
+                            <td>27.07.2017</td>
+                            <td>-191.0</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Управление</td>
+                            <td>Такса Упрвление</td>
+                            <td>07.2017</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>..при това важен</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>или просто ще го погледнем</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>но не ще стне</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>хахахахах</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>Вожд</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>Ааацтек</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>тоз тиливизор</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>КоНе?</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Арсеналски 100</td>
+                            <td>A</td>
+                            <td>14.09.2017</td>
+                            <td>-100.00</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Техническа поддръжка</td>
+                            <td>Ремонт</td>
+                            <td>НотесНотес</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Акад. Иван Гешов 12</td>
+                            <td>-</td>
+                            <td>27.07.2017</td>
+                            <td>-591.0</td>
+                            <td>Разход</td>
+                            <td>В брой</td>
+                            <td>Управление</td>
+                            <td>Такса Упрвление</td>
+                            <td>07.2017</td>
+                            <td>Demo PMS Admin</td>
+                            <td>27.07.2017</td>
+                            <td><a href="edit.php">Редакция</a></td>
+                            <td><a href="del.php">Изтриване</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <input type="button" id="btn" value="Добави Нов" >
+                <input type="button" id="btn" value="Създай Отчет" >
+
+            </div>
+        
+        <script type="text/javascript">
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            };
+            
+            function openDailyFilter() {
+                var x = document.getElementById('dailyFilter');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+            
+            function closeDailyFilter() {
+                var x = document.getElementById('dailyFilter');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+        </script>
+     
+    </div>        
+            
+    </body>
+    
+     <footer>
+        <img src="Images/llv_logo_small.png"/>
+        <p style="font-size: 70%;">Powered by LLV Technology Ltd. &copy; 2009 - 2017 All rights reserved.</p>
+    </footer>
+    
+</html>
